@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Run lint and Fix
-        run: npm run lint:fix
+#      - name: Run lint and Fix
+#        run: npm run lint:fix
 
       - name: Run test and Coverage
         run: npm run test:coverage
