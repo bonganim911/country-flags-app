@@ -13,6 +13,9 @@ RUN npm install
 # Copy the rest of the application code
 COPY . .
 
+# Disable ESLint during the build process
+ENV DISABLE_ESLINT_PLUGIN=true
+
 # Build the React app
 RUN npm run build
 

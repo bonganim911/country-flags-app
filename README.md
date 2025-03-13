@@ -103,7 +103,7 @@ npm run build
 Builds the app for production to the build folder.
 
 # Published Code Coverage
-Codecov results and report are [available here]().
+Codecov results and report are [available here](https://app.codecov.io/github/bonganim911/country-flags-app).
 
 
 # CI/CD GitHub Actions
