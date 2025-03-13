@@ -65,6 +65,7 @@ cd country-flags-app
 
 ## Run Application
 ```bash
+npm install 
 npm start
 ```
 Runs the app in development mode.
@@ -104,7 +105,7 @@ Builds the app for production to the build folder.
 
 # Published Code Coverage
 Codecov results and report are [available here](https://app.codecov.io/github/bonganim911/country-flags-app).
-
+![Code Cov](images/codecov-app.png)
 
 # CI/CD GitHub Actions
 The GitHub Actions workflow runs on push to main or any feature branch.
@@ -118,6 +119,10 @@ The GitHub Actions workflow runs on push to main or any feature branch.
 Our React app integrates with an API, document available on [backend service](https://github.com/bonganim911/country-service).
 
 Trade-offs
+- Fetching of flags information used Backend API not directly using Open API, since backend handle this function.
+  - Not clear from requirements statement whether to fetch directly FE -> Open API or as its mentioned in overview to integrate with backend api.
 - Performance:
   - Could have implemented Lazy loading to improve initial load time.
   - Did not optimize images or assets further due to project scope.
+- Lint
+  - Linting not working as expected on ci, due to time constraint decided to not run it on pipeline. But can be run on pre git push.
