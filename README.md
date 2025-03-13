@@ -1,70 +1,123 @@
-# Getting Started with Create React App
+# Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* [Country Application Project](#country-application-project)
+    * [Minimum Requirements](#minimum-requirements)
+* [Getting Started](#getting-started)
+    * [Major Libraries / Tools](#major-libraries--tools)
+    * [Checkout the Code](#checkout-the-code)
+* [Setting up Prerequisites](#setting-up-prerequisites)
+    * [Node.js Setup](#nodejs-setup)
+    * [Run Application](#run-application)
+* [Running Quality Gates and Build Commands](#running-quality-gates-and-build-commands)
+    * [Static Code Analysis](#static-code-analysis)
+    * [Unit Tests](#unit-tests)
+    * [Code Coverage](#code-coverage)
+    * [Build Project](#build-project)
+    * [Published Code Coverage](#published-code-coverage)
+* [CI/CD GitHub Actions](#cicd-github-actions)
+* [API Documentation](#api-documentation)
+* [Trade-offs](#trade-offs)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# Country Application Project
 
-### `npm start`
+This is a ReactJS application that demonstrates a simple front-end, routing, and API integration (country-service api).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Minimum Requirements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Install [Git](https://www.atlassian.com/git/tutorials/install-git) (if you don't have it yet).
+- Install [Node.js](https://nodejs.org/) (version 16 or higher recommended).
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Getting Started
 
-### `npm run build`
+This project was bootstrapped with [Create React App](https://create-react-app.dev/).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- If you are not already familiar with React, you may start with the [official React documentation](https://reactjs.org/docs/getting-started.html).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Major Libraries / Tools
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Category                    | Library/Tool          | Link                                         |
+|-----------------------------|-----------------------|----------------------------------------------|
+| Core Framework              | React                 | https://reactjs.org/                        |
+| State Management            | Redux                 | https://redux.js.org/                       |
+| Routing                     | React Router          | https://reactrouter.com/                    |
+| Styling                     | Mui Material CSS      | https://www.muicss.com/                                            |
+| Testing Framework           | Jest                  | https://jestjs.io/                          |
+| Testing Utilities           | React Testing Library | https://testing-library.com/docs/react-testing-library/intro/ |
+| Code Coverage               | Istanbul              | https://istanbul.js.org/                    |
+| Static Code Analysis        | ESLint                | https://eslint.org/                         |
+| CI/CD                       | GitHub Actions        | https://github.com/features/actions         |
 
-### `npm run eject`
+## Checkout the Code
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone git@github.com:bonganim911/country-flags-app.git
+cd country-flags-app
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Setting up Prerequisites
+- Node.js Setup, Install Node.js and npm (Node Package Manager) from the official [Node.js website.](https://nodejs.org/)
+- Backend API, details to set it up and run it [found here](https://github.com/bonganim911/country-service).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Run Application
+```bash
+npm start
+```
+Runs the app in development mode.
+Open http://localhost:3000 to view it in the browser.
+![Home Page](images/home.png)
 
-## Learn More
+Details Page
+![Home Page](images/detail.png)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# Running Quality Gates and Build Commands Static Code Analysis
+```bash
+npm run lint
+```
+Runs ESLint to analyze the code for potential issues.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Unit Tests
+```bash
+npm test
+```
+Launches the test runner in interactive watch mode.
 
-### Code Splitting
+### Code Coverage
+```bash
+npm run test:coverage
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Code Coverage Report
+Runs tests and generates a code coverage report.
+![Code Coverage Report](images/country-app-code-coverage.png)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+ ### Build Project
+```bash
+npm run build
+```
+Builds the app for production to the build folder.
 
-### Making a Progressive Web App
+# Published Code Coverage
+Codecov results and report are [available here]().
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+# CI/CD GitHub Actions
+The GitHub Actions workflow runs on push to main or any feature branch.
+- Builds the project.
+- Runs static code analysis.
+- Executes all tests.
+- Generates and publishes code coverage results to Codecov.
+- Builds and publishes a Docker image to Docker Hub.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# API Documentation
+Our React app integrates with an API, document available on [backend service](https://github.com/bonganim911/country-service).
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Trade-offs
+- Performance:
+  - Could have implemented Lazy loading to improve initial load time.
+  - Did not optimize images or assets further due to project scope.
