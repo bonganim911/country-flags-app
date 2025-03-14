@@ -121,6 +121,7 @@ Our React app integrates with an API, document available on [backend service](ht
 Trade-offs
 - Fetching of flags information used Backend API not directly using Open API, since backend handle this function.
   - Not clear from requirements statement whether to fetch directly FE -> Open API or as its mentioned in overview to integrate with backend api.
+- Didnt cater for unhappy scenerios like 404 or errors coming from backend to be displayed.
 - Performance:
   - Could have implemented Lazy loading to improve initial load time.
   - Did not optimize images or assets further due to project scope.
